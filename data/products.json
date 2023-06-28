@@ -1,0 +1,208 @@
+[
+  {
+    "name": "Elegantne cipele",
+    "gender": "male",
+    "description": "Crvene elegantne cipele sa pertlanjem",
+    "brand": "Curios",
+    "slug": "crvene-cipele",
+    "category": "644ee6d494fbfd44033a6784",
+    "images": [
+      "https://res.cloudinary.com/dq8xjxge0/image/upload/v1683239246/cipela1-crvena/jc1glmquejs9kxunxrtk.jpg",
+      "https://res.cloudinary.com/dq8xjxge0/image/upload/v1683239248/cipela1-crvena/c5wehd21xxnkdcluojoz.jpg",
+      "https://res.cloudinary.com/dq8xjxge0/image/upload/v1683239250/cipela1-crvena/tw3pocovssazbwitee5e.jpg",
+      "https://res.cloudinary.com/dq8xjxge0/image/upload/v1683239252/cipela1-crvena/nlapqo6aycfdy6f9hx7d.jpg"
+    ],
+    "sizes": [
+      { "size": 35, "qty": 1 },
+      { "size": 36, "qty": 2 },
+      { "size": 37, "qty": 8 },
+      { "size": 38, "qty": 3 }
+    ],
+    "lice": "Koža",
+    "postava": "Koža",
+    "djon": "Guma",
+    "price": 12000,
+    "discount": 0,
+    "sold": 25,
+    "limited": true,
+    "sale": false,
+    "exclusive": false,
+    "tip": "zenske-cipele"
+  },
+  {
+    "name": "Elegantne cipele",
+    "gender": "male",
+    "description": "Crvene elegantne cipele sa pertlanjem",
+    "brand": "Curios",
+    "slug": "zuto-braon-cipele",
+    "category": "644ee6d494fbfd44033a6784",
+    "images": [
+      "https://res.cloudinary.com/dq8xjxge0/image/upload/v1683678836/PlaceHolder/adb1zl2itvmclfwif1ej.jpg",
+      "https://res.cloudinary.com/dq8xjxge0/image/upload/v1683239248/cipela1-crvena/c5wehd21xxnkdcluojoz.jpg",
+      "https://res.cloudinary.com/dq8xjxge0/image/upload/v1683239250/cipela1-crvena/tw3pocovssazbwitee5e.jpg",
+      "https://res.cloudinary.com/dq8xjxge0/image/upload/v1683239252/cipela1-crvena/nlapqo6aycfdy6f9hx7d.jpg"
+    ],
+    "sizes": [
+      { "size": 35, "qty": 1 },
+      { "size": 36, "qty": 2 },
+      { "size": 37, "qty": 8 },
+      { "size": 38, "qty": 3 }
+    ],
+    "lice": "Koža",
+    "postava": "Koža",
+    "djon": "Guma",
+    "price": 5000,
+    "discount": 0,
+    "sold": 25,
+    "limited": false,
+    "sale": true,
+    "exclusive": false
+  },
+  {
+    "name": "Elegantne cipele",
+    "gender": "male",
+    "description": "Crvene elegantne cipele sa pertlanjem",
+    "brand": "Curios",
+    "slug": "braon-zlatne-cipele",
+    "category": "644ee6d494fbfd44033a6784",
+    "images": [
+      "https://res.cloudinary.com/dq8xjxge0/image/upload/v1683678838/PlaceHolder/uwzecse8zwcywmovq8ft.jpg",
+      "https://res.cloudinary.com/dq8xjxge0/image/upload/v1683239248/cipela1-crvena/c5wehd21xxnkdcluojoz.jpg",
+      "https://res.cloudinary.com/dq8xjxge0/image/upload/v1683239250/cipela1-crvena/tw3pocovssazbwitee5e.jpg",
+      "https://res.cloudinary.com/dq8xjxge0/image/upload/v1683239252/cipela1-crvena/nlapqo6aycfdy6f9hx7d.jpg"
+    ],
+    "sizes": [
+      { "size": 35, "qty": 1 },
+      { "size": 36, "qty": 2 },
+      { "size": 37, "qty": 8 },
+      { "size": 38, "qty": 3 }
+    ],
+    "lice": "Koža",
+    "postava": "Koža",
+    "djon": "Guma",
+    "price": 14500,
+    "discount": 0,
+    "sold": 25,
+    "limited": false,
+    "sale": false,
+    "exclusive": true
+  },
+  {
+    "name": "Elegantne cipele",
+    "gender": "male",
+    "description": "Crvene elegantne cipele sa pertlanjem",
+    "brand": "Curios",
+    "slug": "duboke-plave-cipele",
+    "category": "644ee6d494fbfd44033a6784",
+    "images": [
+      "https://res.cloudinary.com/dq8xjxge0/image/upload/v1683678839/PlaceHolder/qypkzwusqfsmdkluktpj.jpg",
+      "https://res.cloudinary.com/dq8xjxge0/image/upload/v1683239248/cipela1-crvena/c5wehd21xxnkdcluojoz.jpg",
+      "https://res.cloudinary.com/dq8xjxge0/image/upload/v1683239250/cipela1-crvena/tw3pocovssazbwitee5e.jpg",
+      "https://res.cloudinary.com/dq8xjxge0/image/upload/v1683239252/cipela1-crvena/nlapqo6aycfdy6f9hx7d.jpg"
+    ],
+    "sizes": [
+      { "size": 35, "qty": 1 },
+      { "size": 36, "qty": 2 },
+      { "size": 37, "qty": 8 },
+      { "size": 38, "qty": 3 }
+    ],
+    "lice": "Koža",
+    "postava": "Koža",
+    "djon": "Guma",
+    "price": 15000,
+    "discount": 0,
+    "sold": 25,
+    "limited": false,
+    "sale": false,
+    "exclusive": false
+  },
+  {
+    "name": "Elegantne cipele",
+    "gender": "male",
+    "description": "Crvene elegantne cipele sa pertlanjem",
+    "brand": "Curios",
+    "slug": "oksford-braon-zuti-duboki",
+    "category": "644ee6d494fbfd44033a6784",
+    "images": [
+      "https://res.cloudinary.com/dq8xjxge0/image/upload/v1683678841/PlaceHolder/fgxjtyfvne60azkgbc0c.jpg",
+      "https://res.cloudinary.com/dq8xjxge0/image/upload/v1683239248/cipela1-crvena/c5wehd21xxnkdcluojoz.jpg",
+      "https://res.cloudinary.com/dq8xjxge0/image/upload/v1683239250/cipela1-crvena/tw3pocovssazbwitee5e.jpg",
+      "https://res.cloudinary.com/dq8xjxge0/image/upload/v1683239252/cipela1-crvena/nlapqo6aycfdy6f9hx7d.jpg"
+    ],
+    "sizes": [
+      { "size": 35, "qty": 1 },
+      { "size": 36, "qty": 2 },
+      { "size": 37, "qty": 8 },
+      { "size": 38, "qty": 3 }
+    ],
+    "lice": "Koža",
+    "postava": "Koža",
+    "djon": "Guma",
+    "price": 20000,
+    "discount": 0,
+    "sold": 25,
+    "limited": false,
+    "sale": false,
+    "exclusive": false
+  },
+  {
+    "name": "Elegantne cipele",
+    "gender": "male",
+    "description": "Crvene elegantne cipele sa pertlanjem",
+    "brand": "Curios",
+    "slug": "oksford-plitki",
+    "category": "644ee6d494fbfd44033a6784",
+    "images": [
+      "https://res.cloudinary.com/dq8xjxge0/image/upload/v1683678843/PlaceHolder/wy7jn4axkncefmeccgz8.jpg",
+      "https://res.cloudinary.com/dq8xjxge0/image/upload/v1683239248/cipela1-crvena/c5wehd21xxnkdcluojoz.jpg",
+      "https://res.cloudinary.com/dq8xjxge0/image/upload/v1683239250/cipela1-crvena/tw3pocovssazbwitee5e.jpg",
+      "https://res.cloudinary.com/dq8xjxge0/image/upload/v1683239252/cipela1-crvena/nlapqo6aycfdy6f9hx7d.jpg"
+    ],
+    "sizes": [
+      { "size": 35, "qty": 1 },
+      { "size": 36, "qty": 2 },
+      { "size": 37, "qty": 8 },
+      { "size": 38, "qty": 3 }
+    ],
+    "lice": "Koža",
+    "postava": "Koža",
+    "djon": "Guma",
+    "price": 8900,
+    "discount": 0,
+    "sold": 25,
+    "limited": true,
+    "sale": false,
+    "exclusive": false
+  },
+  {
+    "name": "Elegantne cipele",
+    "gender": "male",
+    "description": "Crvene elegantne cipele sa pertlanjem",
+    "brand": "Curios",
+    "slug": "oksford-zuti-duboki",
+    "category": "644ee6d494fbfd44033a6784",
+    "images": [
+      "https://res.cloudinary.com/dq8xjxge0/image/upload/v1683678844/PlaceHolder/edeshr5qlvbb0crcintv.jpg",
+      "https://res.cloudinary.com/dq8xjxge0/image/upload/v1683239248/cipela1-crvena/c5wehd21xxnkdcluojoz.jpg",
+      "https://res.cloudinary.com/dq8xjxge0/image/upload/v1683239250/cipela1-crvena/tw3pocovssazbwitee5e.jpg",
+      "https://res.cloudinary.com/dq8xjxge0/image/upload/v1683239252/cipela1-crvena/nlapqo6aycfdy6f9hx7d.jpg"
+    ],
+    "sizes": [
+      { "size": 35, "qty": 1 },
+      { "size": 36, "qty": 2 },
+      { "size": 37, "qty": 8 },
+      { "size": 38, "qty": 3 },
+      { "size": 39, "qty": 3 },
+      { "size": 40, "qty": 3 }
+    ],
+    "lice": "Koža",
+    "postava": "Koža",
+    "djon": "Guma",
+    "price": 5500,
+    "discount": 0,
+    "sold": 25,
+    "limited": true,
+    "sale": false,
+    "exclusive": false
+  }
+]

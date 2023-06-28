@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Plitki spens",
+    "slug": "plitki-spens",
+    "isMen": true,
+    "isWomen": true
+  },
+  {
+    "name": "Plitki spens sa bruksom",
+    "slug": "plitki-spens-sa-bruksom",
+    "isMen": true,
+    "isWomen": true
+  },
+  {
+    "name": "Duboki spens",
+    "slug": "duboki-spens",
+    "isMen": true,
+    "isWomen": true
+  },
+  {
+    "name": "Duboki spens sa bruksom",
+    "slug": "duboki-spens-sa-bruksom",
+    "isMen": true,
+    "isWomen": true
+  },
+  {
+    "name": "Plitki oxford",
+    "slug": "plitki-oxford",
+    "isMen": true,
+    "isWomen": true
+  },
+  {
+    "name": "Duboki oxford",
+    "slug": "duboki-oxford",
+    "isMen": true,
+    "isWomen": true
+  },
+  { "name": "Stikle oxford", "slug": "stikle-oxford", "isWomen": true },
+  { "name": "Cizme", "slug": "cizme", "isMen": true, "isWomen": true },
+  { "name": "Zaz cipele", "slug": "zaz-cipele", "isWomen": true },
+  { "name": "Zaz cizme", "slug": "zaz-cizme", "isWomen": true },
+  { "name": "Patike", "slug": "patike", "isMen": true },
+  { "name": "Sandale", "slug": "sandale", "isWomen": true },
+  {
+    "name": "Espadrile",
+    "slug": "espadrile",
+    "isMen": true,
+    "isWomen": true
+  }
+]

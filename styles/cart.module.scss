@@ -1,0 +1,114 @@
+.nav {
+  height: 100px;
+  margin: 0 auto;
+  @media (max-width: 425px) {
+    height: 64px;
+  }
+}
+.width {
+  max-width: 1920px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .cart {
+    &__empty {
+      height: 800px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      @media (max-width: 750px) {
+        height: 600px;
+      }
+
+      svg {
+        width: 250px;
+        height: 250px;
+        fill: $medium-brown;
+      }
+      span {
+        font-size: 2.4rem;
+        font-weight: 700;
+      }
+    }
+    &__cards {
+      margin-top: 8rem;
+      display: flex;
+      flex-direction: column;
+      @media (max-width: 750px) {
+        align-items: center;
+      }
+      @media (max-width: 1024px) {
+        margin-top: 2rem;
+        gap: 2rem;
+      }
+      @media (max-width: 425px) {
+        margin-top: 0rem;
+      }
+      align-items: center;
+      gap: 4rem;
+      h1 {
+        font-family: "Playfair Display";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 44px;
+        line-height: 59px;
+        text-transform: uppercase;
+        color: $medium-brown;
+        text-align: center;
+        @media (max-width: 750px) {
+          font-size: 4rem;
+        }
+        @media (max-width: 450px) {
+          font-size: 3.6rem;
+        }
+      }
+      &_container {
+        width: 100%;
+        @media (max-width: 1024px) {
+          max-width: 50%;
+        }
+        @media (max-width: 950px) {
+          max-width: 55%;
+        }
+        @media (max-width: 850px) {
+          max-width: 60%;
+        }
+
+        @media (max-width: 750px) {
+          max-width: 100%;
+        }
+        .cards {
+          border: 1px solid grey;
+          border-radius: 20px 20px 0 0;
+          .border {
+            border-bottom: 1px solid grey;
+            &:last-of-type {
+              border-bottom: none;
+            }
+          }
+        }
+        .price {
+          background-color: $medium-brown;
+          border-radius: 0 0 20px 20px;
+          padding: 2.8rem 4rem;
+          color: #fff;
+          text-align: right;
+          font-size: 2.2rem;
+          @media (max-width: 1024px) {
+            text-align: center;
+            font-size: 2rem;
+          }
+          span {
+            font-weight: 700;
+            margin-left: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+}

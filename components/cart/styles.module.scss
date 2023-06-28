@@ -1,0 +1,316 @@
+.cartForm {
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8rem;
+  margin-bottom: 12rem;
+  @media (max-width: 1350px) {
+    flex-direction: column;
+    gap: 6rem;
+  }
+  @media (max-width: 1024px) {
+    margin-top: 4rem;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    width: 60%;
+    @media (max-width: 1350px) {
+      width: 100%;
+    }
+    @media (max-width: 1024px) {
+      gap: 4rem;
+    }
+    &_podaci {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+      @media (max-width: 1024px) {
+        gap: 2rem;
+      }
+      h1 {
+        font-family: "Playfair Display";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 3.8rem;
+        line-height: 51px;
+        text-transform: capitalize;
+        color: $medium-brown;
+        @media (max-width: 1024px) {
+          font-size: 3rem;
+        }
+        @media (max-width: 450px) {
+          font-size: 2.2rem;
+        }
+      }
+      form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        @media (max-width: 600px) {
+          grid-template-columns: repeat(1, 1fr);
+        }
+        width: 100%;
+        gap: 0.8rem;
+        label {
+          display: flex;
+          flex-direction: column;
+          gap: 0.4rem;
+
+          span {
+            font-size: 18px;
+            line-height: 24px;
+            color: #050301;
+            @media (max-width: 1024px) {
+              font-size: 1.6rem;
+            }
+            @media (max-width: 600px) {
+              font-size: 1.4rem;
+            }
+          }
+          input {
+            // width: 480px;
+            padding: 1.4rem 2rem;
+            border-radius: 10px;
+            border: 1px solid #adadad;
+            font-size: 1.8rem;
+            @media (max-width: 1024px) {
+              font-size: 1.6rem;
+            }
+            @media (max-width: 600px) {
+              font-size: 1.4rem;
+            }
+          }
+        }
+      }
+    }
+    .placanje {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+      h1 {
+        font-family: "Playfair Display";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 3.8rem;
+        line-height: 51px;
+        text-transform: capitalize;
+        color: $medium-brown;
+        @media (max-width: 1024px) {
+          font-size: 3rem;
+        }
+        @media (max-width: 450px) {
+          font-size: 2.2rem;
+        }
+      }
+      .radio {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        &__box {
+          display: flex;
+          border: 1px solid $medium-brown;
+          padding: 2rem 2.4rem;
+          border-radius: 10px;
+          align-items: center;
+          //   justify-content: space-between;
+          gap: 2rem;
+          input[type="radio"] {
+            /* Sakrije sam radio input */
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            width: 28px;
+            height: 28px;
+            border: 1px solid $medium-brown;
+            border-radius: 50%;
+            // margin-right: 10px;
+            // outline: none;
+            cursor: pointer;
+            position: relative;
+          }
+          input[type="radio"]:checked {
+            border-color: $medium-brown;
+            &::after {
+              content: "";
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              width: 22px;
+              height: 22px;
+              border-radius: 50%;
+              background-color: $medium-brown; /* Boja unutrašnjeg popunjavanja */
+            }
+          }
+          .btn_text {
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            gap: 1.6rem;
+            label {
+              font-weight: 700;
+              font-size: 22px;
+              line-height: 24px;
+              @media (max-width: 1024px) {
+                font-size: 2rem;
+              }
+              @media (max-width: 600px) {
+                font-size: 1.6rem;
+              }
+            }
+            span {
+              font-weight: 400;
+              font-size: 22px;
+              line-height: 24px;
+              @media (max-width: 1024px) {
+                font-size: 2rem;
+              }
+              @media (max-width: 600px) {
+                font-size: 1.6rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__troskovi {
+    width: 35%;
+    @media (max-width: 1350px) {
+      width: 70%;
+      margin: 0 auto;
+    }
+    @media (max-width: 1024px) {
+      width: 100%;
+    }
+    .kupovina {
+      border: 1px solid $medium-brown;
+      border-radius: 2rem;
+      width: 100%;
+      .header {
+        padding: 24px;
+        border-bottom: 1px solid $medium-brown;
+        h1 {
+          font-family: "Playfair Display";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 26px;
+          line-height: 35px;
+          text-transform: capitalize;
+          color: $dark-brown;
+          @media (max-width: 1024px) {
+            font-size: 2.4rem;
+          }
+        }
+      }
+      .cena {
+        padding: 2.4rem;
+        display: flex;
+        flex-direction: column;
+        gap: 8rem;
+        @media (max-width: 1024px) {
+          gap: 6rem;
+        }
+
+        .flex_container {
+          display: flex;
+          flex-direction: column;
+          gap: 2.4rem;
+          .cena__posebno {
+            display: flex;
+            justify-content: space-between;
+
+            p {
+              font-weight: 400;
+              font-size: 22px;
+              line-height: 24px;
+              @media (max-width: 1024px) {
+                font-size: 2rem;
+              }
+              @media (max-width: 650px) {
+                font-size: 1.8rem;
+              }
+            }
+            span {
+              font-weight: 700;
+              font-size: 22px;
+              line-height: 24px;
+              text-align: right;
+              color: #050301;
+              @media (max-width: 1024px) {
+                font-size: 2rem;
+              }
+              @media (max-width: 650px) {
+                font-size: 1.8rem;
+              }
+            }
+          }
+          .cena__ukupno {
+            display: flex;
+            justify-content: space-between;
+            p {
+              font-weight: 400;
+              font-size: 22px;
+              line-height: 24px;
+              color: #99582a;
+              @media (max-width: 1024px) {
+                font-size: 2rem;
+              }
+              @media (max-width: 650px) {
+                font-size: 1.8rem;
+              }
+            }
+            span {
+              font-weight: 700;
+              font-size: 22px;
+              line-height: 24px;
+              color: #99582a;
+              @media (max-width: 1024px) {
+                font-size: 2rem;
+              }
+              @media (max-width: 650px) {
+                font-size: 1.8rem;
+              }
+            }
+          }
+        }
+        .btn_container {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          button {
+            box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.18);
+            background: $dark-brown;
+            padding: 1.5rem 14rem;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 22px;
+            text-transform: uppercase;
+            color: #ffffff;
+            cursor: pointer;
+            transition: all 0.2s;
+            @media (max-width: 1550px) {
+              padding: 1.5rem 10rem;
+            }
+            @media (max-width: 1350px) {
+              font-size: 1.6rem;
+              padding: 1.5rem 14rem;
+            }
+            @media (max-width: 650px) {
+              font-size: 1.4rem;
+              padding: 1.5rem 10rem;
+            }
+            &:hover {
+              transform: translateY(-3px);
+              //   transition: all 0.2s;
+            }
+          }
+        }
+      }
+    }
+  }
+}

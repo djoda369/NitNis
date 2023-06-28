@@ -1,0 +1,155 @@
+.design {
+  position: relative;
+  height: 77.5rem;
+  overflow: hidden;
+  // padding-top: 25rem;
+  // padding: 12rem;
+  @media (max-width: 1540px) {
+    // height: 70rem;
+    // padding-bottom: 100px;
+  }
+  @media (max-width: 1350px) {
+    // height: 65rem;
+    // padding-bottom: 150px;
+  }
+  @media (max-width: 1220px) {
+    // height: 50rem;
+    // padding-bottom: 60px;
+    gap: 2rem;
+  }
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  align-items: center;
+  justify-content: center;
+  background: url("../../public/background/Rectangle_13.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+
+  &__title {
+    text-transform: uppercase;
+    font-family: "Playfair Display", sans-serif;
+    color: $medium-brown;
+    font-weight: 700;
+    font-size: 4.4rem;
+    line-height: 58.65px;
+
+    @media (max-width: 1540px) {
+      font-size: 3.8rem;
+    }
+    @media (max-width: 1220px) {
+      font-size: 3.2rem;
+    }
+    @media (max-width: 1070px) {
+      font-size: 2.8rem;
+    }
+    @media (max-width: 380px) {
+      font-size: 2.4rem;
+      padding-top: 60px;
+    }
+  }
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    color: #fff;
+    h2 {
+      max-width: 137.3rem;
+      font-weight: 700;
+      font-size: 3.8rem;
+      line-height: 50.65px;
+      text-align: center;
+      text-transform: capitalize;
+      font-family: "Playfair Display", sans-serif;
+      padding-left: 30px;
+      padding-right: 30px;
+      @media (max-width: 1540px) {
+        font-size: 3.2rem;
+        max-width: 120rem;
+      }
+      @media (max-width: 1220px) {
+        font-size: 2.8rem;
+        max-width: 105rem;
+      }
+      @media (max-width: 1070px) {
+        font-size: 2.4rem;
+        line-height: 29.33px;
+      }
+      @media (max-width: 600px) {
+        font-size: 2.2rem;
+      }
+    }
+    p {
+      display: block;
+      margin: 0 auto;
+      max-width: 90rem;
+      font-size: 1.8rem;
+      line-height: 24px;
+      text-align: center;
+      padding-left: 10px;
+      padding-right: 10px;
+      @media (max-width: 1350px) {
+        font-size: 1.6rem;
+        max-width: 80rem;
+      }
+      @media (max-width: 550px) {
+        font-size: 1.4rem;
+        line-height: 19px;
+      }
+    }
+  }
+  &__btns {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    @media (max-width: 1350px) {
+      font-size: 1.6rem;
+    }
+    &_kontakt {
+      padding: 13px 32px;
+      border-radius: 30px;
+      background: $medium-brown;
+      color: #fff;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.52);
+      @media (max-width: 1350px) {
+        padding: 10px 28px;
+      }
+    }
+    &_dizajn {
+      padding: 10px 24px;
+      border-radius: 30px;
+      background: $dark-brown;
+      color: #fff;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.52);
+      @media (max-width: 1350px) {
+        padding: 7px 18px;
+      }
+    }
+  }
+  &:before {
+    position: absolute;
+    top: 0;
+    content: "";
+    border-width: 15px;
+    border-style: solid;
+    border-width: 150px 500px;
+    @media (max-width: 1540px) {
+      border-width: 150px 400px;
+    }
+    @media (max-width: 1070px) {
+      border-width: 150px 300px;
+    }
+    @media (max-width: 650px) {
+      border-width: 130px 250px;
+    }
+    border-color: transparent;
+    border-top-color: $light-brown;
+  }
+}

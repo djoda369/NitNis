@@ -1,0 +1,146 @@
+.card {
+  max-width: 100%;
+  padding: 10px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
+  svg {
+    position: absolute;
+    right: 10px;
+    bottom: calc(50% - 20px);
+    width: 40px;
+    height: 40px;
+    fill: $dark-brown;
+    &:hover {
+      cursor: pointer;
+    }
+    @media (max-width: 1024px) {
+      top: 10px;
+      right: 10px;
+    }
+    // @media (max-width: 950px) {
+    //   top: calc(100% - 12%);
+    //   // bottom: 30px;
+    //   right: calc(100% - 92%);
+    // }
+    @media (max-width: 450px) {
+      width: 30px;
+      height: 30px;
+      top: calc(100% - 10%);
+      right: calc(100% - 92%);
+    }
+  }
+
+  &__img {
+    display: flex;
+    align-items: center;
+  }
+  &__info {
+    margin: 34px 40px;
+    height: 100%;
+    display: flex;
+    gap: 150px;
+    @media (max-width: 1750px) {
+      gap: 100px;
+    }
+    @media (max-width: 1630px) {
+      gap: 45px;
+    }
+    @media (max-width: 1282px) {
+      margin: 17px 20px;
+    }
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      // align-items: center;
+      gap: 25px;
+    }
+    @media (max-width: 395px) {
+      gap: 15px;
+    }
+    .prozivod {
+      display: flex;
+      flex-direction: column;
+      gap: 2.4rem;
+      height: 100%;
+      // width: 180px;
+      justify-content: space-between;
+      @media (max-width: 1024px) {
+        gap: 1.2rem;
+      }
+      span {
+        display: block;
+        font-size: 18px;
+        line-height: 24px;
+        color: #050301;
+      }
+      h2 {
+        font-weight: 700;
+        font-size: 22px;
+        color: #050301;
+        @media (max-width: 1088px) {
+          font-size: 1.8rem;
+        }
+      }
+    }
+    .sizes {
+      &__title {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 60px;
+        @media (max-width: 1380px) {
+          gap: 30px;
+        }
+        @media (max-width: 1024px) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        @media (max-width: 395px) {
+          gap: 15px;
+        }
+        div {
+          display: flex;
+          flex-direction: column;
+          gap: 2.4rem;
+          justify-content: space-between;
+          @media (max-width: 1024px) {
+            gap: 1.2rem;
+          }
+          span {
+            font-size: 18px;
+            line-height: 24px;
+            color: #050301;
+          }
+          h2 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #050301;
+            @media (max-width: 1088px) {
+              font-size: 1.8rem;
+            }
+          }
+        }
+      }
+    }
+    .price {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      @media (max-width: 1024px) {
+        gap: 1.2rem;
+      }
+      span {
+        font-size: 18px;
+      }
+      h2 {
+        font-size: 22px;
+        font-weight: 700;
+        color: #050301;
+        @media (max-width: 1088px) {
+          font-size: 1.8rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,110 @@
+.width {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.home {
+  margin: 12rem auto 12rem auto;
+  // max-width: 1920px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 1024px) {
+    margin: 12rem auto;
+  }
+  @media (max-width: 600px) {
+    margin: 4rem auto 8rem auto;
+  }
+  .grid_container {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dva stupca */
+    grid-gap: 4rem;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr;
+    }
+    .img_container {
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      border-radius: 6rem;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      &:hover {
+        cursor: pointer;
+      }
+      @media (max-width: 1024px) {
+        width: 80%;
+        height: 100%;
+      }
+      @media (max-width: 600px) {
+        width: 100%;
+        height: 100%;
+      }
+      .background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 5;
+        background: linear-gradient(
+          0deg,
+          rgba(153, 88, 42, 0.84),
+          rgba(153, 88, 42, 0.84)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 60px;
+        &:hover {
+          background: linear-gradient(
+            0deg,
+            rgba(153, 88, 42, 0.3),
+            rgba(153, 88, 42, 0.3)
+          );
+        }
+        h2 {
+          font-family: "Playfair Display";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 38px;
+          line-height: 51px;
+          text-transform: capitalize;
+          color: #ffffff;
+          @media (max-width: 1300px) {
+            font-size: 3.2rem;
+          }
+          @media (max-width: 900px) {
+            font-size: 2.6rem;
+          }
+        }
+      }
+    }
+    .accesories {
+      grid-column: span 2;
+      overflow: hidden;
+      height: auto;
+
+      @media (max-width: 1024px) {
+        grid-column: span 1;
+      }
+      .img_container {
+        height: 50%;
+        width: 100%;
+
+        @media (max-width: 1024px) {
+          width: 80%;
+          height: 100%;
+        }
+        @media (max-width: 600px) {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
