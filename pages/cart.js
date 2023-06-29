@@ -16,12 +16,14 @@ export default function Cart() {
 
   useEffect(() => {
     const cartItems = JSON.parse(localStorage.getItem("cartNitNis"));
-    const price = cartItems
-      .map((product) => product.price)
-      .reduce((partialSum, a) => partialSum + a, 0);
-    setItems(cartItems);
+    if (cartItems !== null && cartItems !== undefined) {
+      const price = cartItems
+        .map((product) => product.price)
+        .reduce((partialSum, a) => partialSum + a, 0);
+      setPrice(price);
+    }
     setIsLoading(false);
-    setPrice(price);
+    setItems(cartItems);
   }, []);
 
   if (isLoading === false) {
