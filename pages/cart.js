@@ -18,7 +18,10 @@ export default function Cart() {
         .map((product) => product.price)
         .reduce((partialSum, a) => partialSum + a, 0);
       setPrice(price);
+    } else {
+      localStorage.setItem("cartNitNis");
     }
+
     setIsLoading(false);
     setItems(cartItems);
   }, []);
