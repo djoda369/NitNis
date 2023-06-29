@@ -7,26 +7,20 @@ import Footer from "@/components/footer";
 import { MdOutlineShoppingCart } from "react-icons/md";
 
 export default function Cart() {
-  // const cartItems = JSON.parse(localStorage.getItem("cartNitNis"));
-  // console.log(cartItems);
-
-  const [price, setPrice] = useState(false);
+  const [price, setPrice] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [items, setItems] = useState();
 
   useEffect(() => {
-    if (localStorage.getItem("cartNitNis")) {
-      const cartItems = JSON.parse(localStorage.getItem("cartNitNis"));
+    const cartItems = JSON.parse(localStorage.getItem("cartNitNis"));
+    if (cartItems !== null && cartItems !== undefined) {
       const price = cartItems
         .map((product) => product.price)
         .reduce((partialSum, a) => partialSum + a, 0);
-      setItems(cartItems);
-      setIsLoading(false);
       setPrice(price);
-    } else {
-      setPrice(0);
-      setIsLoading(false);
     }
+    setIsLoading(false);
+    setItems(cartItems);
   }, []);
 
   if (isLoading === false) {

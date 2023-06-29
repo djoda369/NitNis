@@ -39,7 +39,7 @@ export default function ProductInfo({ shoe }) {
     ...shoe,
   };
   const dropdownRef = useRef(null);
-  const router = useRouter();
+  // const router = useRouter();
 
   const formSubmit = async function (formData) {
     const resposne = await fetch("/api/formdata", {
@@ -85,7 +85,6 @@ export default function ProductInfo({ shoe }) {
     } else {
       setErrorMessage(null);
       formSubmit(cartData);
-      router.push("/cart");
     }
   };
 
