@@ -366,6 +366,9 @@
         text-transform: none;
         color: #050301;
         padding: 0 20px;
+        @media (max-width: 1024px) {
+          text-align: center;
+        }
       }
       .info {
         margin-top: 4rem;

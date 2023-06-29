@@ -3,7 +3,7 @@ import classes from "./styles.module.scss";
 import { RiCloseLine } from "react-icons/ri";
 import { useRouter } from "next/router";
 
-export default function Filter({ categories, togglefilter, ref }) {
+export default function Filter({ categories, togglefilter, refa }) {
   const handleClick = (e) => {
     e.stopPropagation();
   };
@@ -26,13 +26,11 @@ export default function Filter({ categories, togglefilter, ref }) {
     const newCategories = selectedCategories.includes(category)
       ? selectedCategories.filter((c) => c !== category)
       : [...selectedCategories, category];
-    router.push(
-      `${router.query.shop[0]}/filter/categories=${newCategories.join(",")}`
-    );
+    router.push(`${router.query.shop}?categories=${newCategories.join(",")}`);
   };
 
   return (
-    <div className={`${classes.filter}`} onClick={handleClick} ref={ref}>
+    <div className={`${classes.filter}`} onClick={handleClick} ref={refa}>
       <div className={classes.filter__naslov}>
         <h1>Filter</h1>
         <RiCloseLine onClick={togglefilter} />

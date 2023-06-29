@@ -13,16 +13,21 @@ import { VscListFilter } from "react-icons/vsc";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import paths from "@/helpers/paths";
 
-export default function Shop({ shoes, slug, selectedCategories }) {
+export default function Shop({ shoes, slug }) {
   const [filter, showFilter] = useState(false);
   const [sort, setSort] = useState(false);
   const cath = shoes.map((shoe) => shoe.category);
   const filterRef = useRef(null);
   const [displeyShoes, setDisplayShoes] = useState(shoes);
   const [sortValue, setSortValue] = useState("Sortiraj");
-  console.log(slug);
 
   const router = useRouter();
+  const query = router.query;
+
+  const categoriesValue = query.categories || "";
+  const selectedCategories = categoriesValue ? categoriesValue.split(",") : [];
+
+  console.log(selectedCategories);
 
   const togglefilter = function () {
     showFilter((prevstate) => !prevstate);
@@ -78,7 +83,7 @@ export default function Shop({ shoes, slug, selectedCategories }) {
               categories={cath}
               togglefilter={togglefilter}
               selectedCategories={selectedCategories}
-              ref={filterRef}
+              refa={filterRef}
             />
           </div>
         </CSSTransition>
@@ -112,19 +117,16 @@ export default function Shop({ shoes, slug, selectedCategories }) {
 
 export async function getStaticProps(context) {
   const { params } = context;
-  const slug = params.shop[0];
-  const query = params.shop;
+  const slug = params.shop;
 
-  console.log("kveri", query);
+  // const categoriesParam = query.find((element) =>
+  //   element.includes("categories=")
+  // );
+
+  // const categoriesValue = categoriesParam ? categoriesParam.split("=")[1] : "";
+  // const selectedCategories = categoriesValue ? categoriesValue.split(",") : [];
 
   db.connectDb();
-
-  const categoriesParam = query.find((element) =>
-    element.includes("categories=")
-  );
-
-  const categoriesValue = categoriesParam ? categoriesParam.split("=")[1] : "";
-  const selectedCategories = categoriesValue ? categoriesValue.split(",") : [];
 
   let shoes = await Product.find({ tip: slug })
     .populate({ path: "category", model: Cath })
@@ -133,9 +135,10 @@ export async function getStaticProps(context) {
   return {
     props: {
       shoes: JSON.parse(JSON.stringify(shoes)),
-      selectedCategories: selectedCategories,
+      // selectedCategories: selectedCategories,
       slug,
     },
+    revalidate: 600,
   };
 }
 
@@ -145,6 +148,6 @@ export async function getStaticPaths() {
 
   return {
     paths: path,
-    fallback: "blocking",
+    fallback: false,
   };
 }

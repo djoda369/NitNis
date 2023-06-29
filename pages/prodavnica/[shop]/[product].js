@@ -10,7 +10,6 @@ import { RiArrowDownSLine, RiArrowUpSLine } from "react-icons/ri";
 import Footer from "@/components/footer";
 import { CSSTransition } from "react-transition-group";
 import BigImage from "@/components/bigImage";
-import { useRouter } from "next/router";
 
 export default function ProductInfo({ shoe }) {
   const images = shoe.images;
@@ -39,7 +38,6 @@ export default function ProductInfo({ shoe }) {
     ...shoe,
   };
   const dropdownRef = useRef(null);
-  // const router = useRouter();
 
   const formSubmit = async function (formData) {
     const resposne = await fetch("/api/formdata", {
