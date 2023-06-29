@@ -84,8 +84,8 @@ export default function ProductInfo({ shoe }) {
       setErrorMessage("Pravlino unesite mere!");
     } else {
       setErrorMessage(null);
+      formSubmit(cartData);
       router.push("/cart");
-      return formSubmit(cartData);
     }
   };
 
