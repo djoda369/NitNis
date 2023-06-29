@@ -15,18 +15,19 @@ export default function Cart() {
   const [items, setItems] = useState();
 
   useEffect(() => {
-    let cartItems = JSON.parse(localStorage.getItem("cartNitNis"));
-    if (cartItems === null && cartItems === undefined) {
+    const cartItems = JSON.parse(localStorage.getItem("cartNitNis"));
+    if (cartItems !== null && cartItems !== undefined) {
+      const price = cartItems
+        .map((product) => product.price)
+        .reduce((partialSum, a) => partialSum + a, 0);
+      setPrice(price);
+      setIsLoading(false);
+      setItems(cartItems);
+    } else {
       localStorage.setItem("cartNitNis");
-      cartItems = JSON.parse(localStorage.getItem("cartNitNis"));
+      setIsLoading(false);
+      setPrice(0);
     }
-    const price = cartItems
-      .map((product) => product.price)
-      .reduce((partialSum, a) => partialSum + a, 0);
-    setPrice(price);
-
-    setIsLoading(false);
-    setItems(cartItems);
   }, []);
 
   if (isLoading === false) {
