@@ -15,18 +15,17 @@ export default function Cart() {
   const [items, setItems] = useState();
 
   useEffect(() => {
-    const cartItems = JSON.parse(localStorage.getItem("cartNitNis"));
-    if (cartItems !== null && cartItems !== undefined) {
+    if (localStorage.getItem("cartNitNis")) {
+      const cartItems = JSON.parse(localStorage.getItem("cartNitNis"));
       const price = cartItems
         .map((product) => product.price)
         .reduce((partialSum, a) => partialSum + a, 0);
-      setPrice(price);
-      setIsLoading(false);
       setItems(cartItems);
-    } else {
-      localStorage.setItem("cartNitNis");
       setIsLoading(false);
+      setPrice(price);
+    } else {
       setPrice(0);
+      setIsLoading(false);
     }
   }, []);
 
@@ -79,7 +78,5 @@ export default function Cart() {
         <Footer />
       </>
     );
-  } else {
-    return <div>Loading</div>;
   }
 }
