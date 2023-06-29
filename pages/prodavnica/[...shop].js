@@ -129,7 +129,7 @@ export async function getStaticProps(context) {
   let shoes = await Product.find({ tip: slug })
     .populate({ path: "category", model: Cath })
     .lean();
-  // console.log(shoes);
+
   return {
     props: {
       shoes: JSON.parse(JSON.stringify(shoes)),

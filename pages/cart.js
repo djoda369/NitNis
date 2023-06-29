@@ -73,5 +73,7 @@ export default function Cart() {
         <Footer />
       </>
     );
+  } else {
+    return <div>Loading</div>;
   }
 }
