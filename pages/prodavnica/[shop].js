@@ -27,8 +27,6 @@ export default function Shop({ shoes, slug }) {
   const categoriesValue = query.categories || "";
   const selectedCategories = categoriesValue ? categoriesValue.split(",") : [];
 
-  console.log(selectedCategories);
-
   const togglefilter = function () {
     showFilter((prevstate) => !prevstate);
   };

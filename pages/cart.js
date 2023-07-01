@@ -12,7 +12,7 @@ export default function Cart() {
   const [items, setItems] = useState();
 
   useEffect(() => {
-    const cartItems = JSON.parse(localStorage.getItem("cartNitNis"));
+    let cartItems = JSON.parse(localStorage.getItem("cartNitNis"));
     if (cartItems !== null && cartItems !== undefined) {
       const price = cartItems
         .map((product) => product.price)
@@ -20,6 +20,7 @@ export default function Cart() {
       setPrice(price);
     } else {
       localStorage.setItem("cartNitNis");
+      cartItems = [];
     }
 
     setIsLoading(false);

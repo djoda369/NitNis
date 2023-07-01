@@ -3,12 +3,16 @@ import classes from "./styles.module.scss";
 import { RiCloseLine } from "react-icons/ri";
 import { useRouter } from "next/router";
 
-export default function Filter({ categories, togglefilter, refa }) {
+export default function Filter({
+  categories,
+  togglefilter,
+  refa,
+  selectedCategories,
+}) {
   const handleClick = (e) => {
     e.stopPropagation();
   };
 
-  const [selectedCategories, setSelectedCategories] = useState([]);
   const router = useRouter();
 
   const sortedCategories = [...categories].sort((a, b) =>
@@ -17,11 +21,6 @@ export default function Filter({ categories, togglefilter, refa }) {
 
   const handleCategoryChange = (category, e) => {
     e.preventDefault();
-    if (selectedCategories.includes(category)) {
-      setSelectedCategories(selectedCategories.filter((c) => c !== category));
-    } else {
-      setSelectedCategories([...selectedCategories, category]);
-    }
 
     const newCategories = selectedCategories.includes(category)
       ? selectedCategories.filter((c) => c !== category)
