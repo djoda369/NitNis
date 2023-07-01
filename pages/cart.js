@@ -21,13 +21,8 @@ export default function Cart() {
       setIsLoading(false);
       setItems(cartItems);
     } else {
-      localStorage.setItem("cartNitNis");
       setIsLoading(false);
     }
-
-    // setIsLoading(false);
-  
-    // setItems(cartItems);
   }, []);
 
   if (isLoading === false) {
