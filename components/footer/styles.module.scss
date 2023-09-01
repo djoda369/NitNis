@@ -198,6 +198,7 @@
     color: #666;
     span {
       position: relative;
+      z-index: 10000;
       &:after {
         content: "";
         position: absolute;
@@ -206,6 +207,7 @@
         background-color: #666;
         right: -3.2rem;
         bottom: 0;
+        z-index: 10000;
         @media (max-width: 768px) {
           right: -1.6rem;
         }
