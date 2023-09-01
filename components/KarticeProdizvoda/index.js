@@ -14,11 +14,20 @@ export default function Card({
   tip,
 }) {
   const priceComa = price.toLocaleString("en-US");
+  const vertical =
+    tip === "zenska-odeca" || tip === "muska-odeca" || tip === "aksesoari";
+  const horizontal = tip === "zenska-obuca" || tip === "muska-obuca";
 
   return (
     <div className={classes.card}>
       <Link href={`/prodavnica/${tip}/${slug}`}>
-        <div className={classes.image__container}>
+        <div
+          className={
+            vertical
+              ? `${classes.image__vertical}`
+              : `${classes.image__container}`
+          }
+        >
           <Image
             src={image}
             alt={name}

@@ -32,10 +32,7 @@ export default function ConnectPopup({ onClose }) {
             <span>Društvene Mreže</span>
             <div className={classes.soc__container}>
               <div className={classes.soc__container_box}>
-                <a
-                  href="https://www.instagram.com/nit_nis/?hl=en"
-                  target="blank"
-                >
+                <a href="https://www.instagram.com/nit_nis018/" target="blank">
                   <RiInstagramLine />
                 </a>
               </div>

@@ -19,6 +19,16 @@ export default function Filter({
     a.name.localeCompare(b.name)
   );
 
+  let bezDuplikata = [];
+  let vidjeniIdjevi = new Set();
+
+  for (let objekt of sortedCategories) {
+    if (!vidjeniIdjevi.has(objekt._id)) {
+      vidjeniIdjevi.add(objekt._id);
+      bezDuplikata.push(objekt);
+    }
+  }
+
   const handleCategoryChange = (category, e) => {
     e.preventDefault();
 
@@ -37,7 +47,7 @@ export default function Filter({
       <div className={classes.katergorije}>
         <h2>Kategorija proizvoda</h2>
         <ul className={classes.katergorije__list}>
-          {sortedCategories.map((category) => (
+          {bezDuplikata.map((category) => (
             <li key={category._id}>
               <label>
                 <input

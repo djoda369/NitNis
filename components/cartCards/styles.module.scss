@@ -41,7 +41,9 @@
   &__info {
     margin: 34px 40px;
     height: 100%;
+    width: 80%;
     display: flex;
+    justify-content: space-between;
     gap: 150px;
     @media (max-width: 1750px) {
       gap: 100px;
@@ -104,6 +106,7 @@
           flex-direction: column;
           gap: 2.4rem;
           justify-content: space-between;
+          align-items: center;
           @media (max-width: 1024px) {
             gap: 1.2rem;
           }
@@ -126,6 +129,7 @@
     .price {
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: 24px;
       @media (max-width: 1024px) {
         gap: 1.2rem;

@@ -5,17 +5,15 @@ const productSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
+    unique: true,
   },
   gender: {
     type: String,
-    enum: ["male", "female"],
+    enum: ["male", "female", "neutral"],
   },
   description: {
     type: String,
     required: true,
-  },
-  brand: {
-    type: String,
   },
   slug: {
     type: String,
@@ -27,24 +25,28 @@ const productSchema = new mongoose.Schema({
     required: true,
     ref: "Categories",
   },
+  tip: {
+    type: String,
+    required: true,
+  },
   images: [{ type: String }],
+  mainImage: { type: String },
   sizes: [
     {
-      size: Number,
-      qty: Number,
+      type: String,
     },
   ],
   lice: {
     type: String,
-    required: true,
   },
   postava: {
     type: String,
-    required: true,
   },
   djon: {
     type: String,
-    required: true,
+  },
+  materijal: {
+    type: String,
   },
   price: {
     type: Number,
@@ -67,6 +69,10 @@ const productSchema = new mongoose.Schema({
     default: false,
   },
   exclusive: {
+    type: Boolean,
+    default: false,
+  },
+  featured: {
     type: Boolean,
     default: false,
   },

@@ -1,5 +1,8 @@
 import classes from "./styles.module.scss";
 import { RiCloseLine } from "react-icons/ri";
+import Image from "next/image";
+import Mere from "../../public/products/mere.jpg";
+import Tablica from "../../public/products/tablica.jpg";
 
 export default function SizesPopUp({ onClose }) {
   const handleClick = (e) => {
@@ -12,7 +15,38 @@ export default function SizesPopUp({ onClose }) {
           <RiCloseLine />
         </div>
         <div className={classes.popup__container}>
-          <img src="../../products/mere.jpg" alt="mere" />
+          <div className={classes.imgContainer}>
+            <div className={classes.img2}>
+              <Image
+                src={Tablica}
+                alt="mere"
+                width={500}
+                height={500}
+                style={{
+                  // borderRadius: "40px",
+                  zIndex: 1,
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "contain",
+                }}
+              />
+            </div>{" "}
+            <div className={classes.img}>
+              <Image
+                src={Mere}
+                alt="mere"
+                width={500}
+                height={500}
+                style={{
+                  // borderRadius: "40px",
+                  zIndex: 1,
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "contain",
+                }}
+              />
+            </div>
+          </div>
           <div className={classes.text}>
             <p>
               *Pored broja koji standardno nosite potrebno je da nam posaljete

@@ -5,11 +5,15 @@ import { useEffect, useState } from "react";
 import CartForm from "@/components/cart/cartForm";
 import Footer from "@/components/footer";
 import { MdOutlineShoppingCart } from "react-icons/md";
+import CartContext from "@/components/context/cartContext";
+import { useContext } from "react";
+import Head from "next/head";
 
 export default function Cart() {
   const [price, setPrice] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [items, setItems] = useState();
+  const context = useContext(CartContext);
 
   useEffect(() => {
     if (JSON.parse(localStorage.getItem("cartNitNis"))) {
@@ -20,6 +24,7 @@ export default function Cart() {
       setPrice(price);
       setIsLoading(false);
       setItems(cartItems);
+      context.setCartItems(cartItems.length);
     } else {
       setIsLoading(false);
     }
@@ -29,9 +34,12 @@ export default function Cart() {
     const showCart = price === 0 ? false : true;
 
     return (
-      <>
+      <div>
+        <Head>
+          <title>NitNis - Ručno rađena obuća i odeća</title>
+        </Head>
         <div className={classes.nav}>
-          <NavBar transparent={true} />
+          <NavBar transparent={true} context={context} />
         </div>
         <div className={classes.width}>
           <div className={`${classes.container} ${classes.cart}`}>
@@ -49,6 +57,7 @@ export default function Cart() {
                             setPrice={(value) =>
                               setPrice((prevState) => prevState - value)
                             }
+                            context={context}
                           />
                         </div>
                       );
@@ -72,7 +81,7 @@ export default function Cart() {
           </div>
         </div>
         <Footer />
-      </>
+      </div>
     );
   }
 }

@@ -15,11 +15,15 @@ export default function Connect() {
           <div className={classes.connect__details_list}>
             <div className={classes.connect__details_list_data}>
               <img src="../../Connect/Phone.png" alt="" />
-              <span>+381 69 1234 567</span>
+              <a href="tel:+381691234567" target="blank">
+                +381 69 1234 567
+              </a>
             </div>
             <div className={classes.connect__details_list_data}>
               <img src="../../Connect/Mail.png" alt="" />
-              <span>office@nitnis.com</span>
+              <a href="mailto:office@nitnis.com" target="blank">
+                office@nitnis.com
+              </a>
             </div>
             <div className={classes.connect__details_list_data}>
               <img src="../../Connect/Location.png" alt="" />
@@ -30,10 +34,7 @@ export default function Connect() {
             <span>Društvene Mreže</span>
             <div className={classes.social__container}>
               <div className={classes.social__container_box}>
-                <a
-                  href="https://www.instagram.com/nit_nis/?hl=en"
-                  target="blank"
-                >
+                <a href="https://www.instagram.com/nit_nis018/" target="blank">
                   <RiInstagramLine />
                 </a>
               </div>

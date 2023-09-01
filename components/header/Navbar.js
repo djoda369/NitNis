@@ -11,17 +11,24 @@ import {
   RiArrowDownCircleFill,
   RiArrowUpCircleFill,
 } from "react-icons/ri";
+import { HiOutlineChevronDoubleDown } from "react-icons/hi";
 
-export default function NavBar({ active, transparent }) {
+export default function NavBar({ active, transparent, context }) {
   const [sidebar, setSideBar] = useState(false);
   const sideRef = useRef(null);
   const [prodavnicaDropDown, setProdavnicaDropDown] = useState(false);
+  const [prodavnicaDropDownBig, setProdavnicaDropDownBig] = useState(false);
 
   const divRef = useRef(null);
+  const bigRef = useRef(null);
   const prodavnicRef = useRef(null);
 
   const trigerSidebar = function () {
     return setSideBar((prevstate) => !prevstate);
+  };
+
+  const trigerShopBig = function () {
+    return setProdavnicaDropDownBig((prevstate) => !prevstate);
   };
 
   const trigerShop = function () {
@@ -67,15 +74,55 @@ export default function NavBar({ active, transparent }) {
               Početna
             </span>
           </Link>
-          <Link href="/prodavnica" className={classes.hover}>
-            <span
-              className={
-                active == "prodavnica" ? `${classes.active__page}` : ""
-              }
+          <div className={classes.navigation}>
+            <Link href="/prodavnica" className={classes.hover}>
+              <span
+                className={
+                  active == "prodavnica" ? `${classes.active__page}` : ""
+                }
+                // onMouseOut={trigerShopBig}
+              >
+                Prodavnica
+              </span>
+            </Link>
+            <HiOutlineChevronDoubleDown onMouseEnter={trigerShopBig} />
+            <CSSTransition
+              in={prodavnicaDropDownBig}
+              // timeout={300}
+              unmountOnExit
+              nodeRef={bigRef}
+              classNames={{
+                enter: classes.prodavnicaBig,
+                enterActive: classes.prodavnicaBigActive,
+                exit: classes.prodavnicaBigExit,
+                exitActive: classes.prodavnicaBigExitActive,
+              }}
             >
-              Prodavnica
-            </span>
-          </Link>
+              <div
+                ref={bigRef}
+                className={classes.prodavnicaOptions}
+                onMouseLeave={trigerShopBig}
+              >
+                <ul>
+                  <Link href="/prodavnica/zenska-obuca">
+                    <li onClick={trigerSidebar}>Ženska obuća</li>
+                  </Link>
+                  <Link href="/prodavnica/muska-obuca">
+                    <li onClick={trigerSidebar}>Muška obuća</li>
+                  </Link>
+                  <Link href="/prodavnica/zenska-odeca">
+                    <li onClick={trigerSidebar}>Ženska Odeća</li>
+                  </Link>
+                  <Link href="/prodavnica/muska-odeca">
+                    <li onClick={trigerSidebar}>Muška odeća</li>
+                  </Link>
+                  <Link href="/prodavnica/aksesoari">
+                    <li onClick={trigerSidebar}>Akseosoari</li>
+                  </Link>
+                </ul>
+              </div>
+            </CSSTransition>
+          </div>
           {/* <span className={classes.hover}>Dizajnirajte Cipelu</span> */}
         </div>
         <div className={classes.header__btns}>
@@ -84,6 +131,7 @@ export default function NavBar({ active, transparent }) {
           </span>
           <Link href="/cart">
             <button className={classes.header__btns_kontakt}>
+              <span className={classes.cartNumber}>{context.cartItems}</span>
               <MdOutlineShoppingCart />
               <span>Korpa</span>
             </button>
@@ -150,15 +198,21 @@ export default function NavBar({ active, transparent }) {
                           // }}
                         >
                           <ul>
-                            <Link href="/prodavnica/zenske-cipele">
-                              <li>Ženska obuća</li>
+                            <Link href="/prodavnica/zenska-obuca">
+                              <li onClick={trigerSidebar}>Ženska obuća</li>
                             </Link>
-                            <Link href="/prodavnica/muske-cipele">
-                              <li>Muška obuća</li>
+                            <Link href="/prodavnica/muska-obuca">
+                              <li onClick={trigerSidebar}>Muška obuća</li>
                             </Link>
-                            {/* <li>Ženska Odeća</li> */}
-                            {/* <li>Muška odeća</li> */}
-                            {/* <li>Akseosoari</li> */}
+                            <Link href="/prodavnica/zenska-odeca">
+                              <li onClick={trigerSidebar}>Ženska Odeća</li>
+                            </Link>
+                            <Link href="/prodavnica/muska-odeca">
+                              <li onClick={trigerSidebar}>Muška odeća</li>
+                            </Link>
+                            <Link href="/prodavnica/aksesoari">
+                              <li onClick={trigerSidebar}>Akseosoari</li>
+                            </Link>
                           </ul>
                         </div>
                       </CSSTransition>

@@ -2,9 +2,14 @@ import classes from "./styles.module.scss";
 import Image from "next/image";
 import { RiCloseLine } from "react-icons/ri";
 
-export default function CartCard({ card, setItem, setPrice }) {
+export default function CartCard({ card, setItem, setPrice, context }) {
   const image = card.images[0];
   const price = card.price.toLocaleString("en-US");
+  const vertical =
+    card.tip === "zenska-odeca" ||
+    card.tip === "muska-odeca" ||
+    card.tip === "aksesoari";
+  console.log(vertical);
 
   const removeItem = function () {
     const cart = JSON.parse(localStorage.getItem("cartNitNis"));
@@ -12,6 +17,7 @@ export default function CartCard({ card, setItem, setPrice }) {
     localStorage.setItem("cartNitNis", JSON.stringify(temp));
     setItem(temp);
     setPrice(card.price);
+    context.setCartItems((prevstate) => prevstate - 1);
   };
 
   return (
@@ -41,18 +47,24 @@ export default function CartCard({ card, setItem, setPrice }) {
               <span>Veličina</span>
               <h2>{card.velicina}</h2>
             </div>
-            <div>
-              <span>Obim Risa</span>
-              <h2>{card.obimRisa} CM</h2>
-            </div>
-            <div>
-              <span>Obim Prstiju</span>
-              <h2>{card.obimPrstiju} CM</h2>
-            </div>
-            <div>
-              <span>Dužina Stopala</span>
-              <h2>{card.duzinaStopala} CM</h2>
-            </div>
+            {!vertical && (
+              <div>
+                <span>Obim Risa</span>
+                <h2>{card.obimRisa} CM</h2>
+              </div>
+            )}
+            {!vertical && (
+              <div>
+                <span>Obim Prstiju</span>
+                <h2>{card.obimPrstiju} CM</h2>
+              </div>
+            )}
+            {!vertical && (
+              <div>
+                <span>Dužina Stopala</span>
+                <h2>{card.duzinaStopala} CM</h2>
+              </div>
+            )}
           </div>
         </div>
         <div className={classes.price}>

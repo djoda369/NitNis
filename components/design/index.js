@@ -4,7 +4,7 @@ import classes from "./styles.module.scss";
 export default function Design() {
   return (
     <div className={classes.design}>
-      <h1 className={classes.design__title}>Dizajniraj svoju cipelu</h1>
+      <h1 className={classes.design__title}>Dizajnirajte svoju cipelu</h1>
       <div className={classes.design__text}>
         <h2>
           Želite da imate jedinstveni par cipela koji će odgovarati vašem stilu

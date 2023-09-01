@@ -16,7 +16,7 @@
     display: flex;
     gap: 3.2rem;
     align-items: center;
-
+    justify-content: space-between;
     @media (max-width: 530px) {
       gap: 1.6rem;
       justify-content: space-between;
@@ -33,22 +33,44 @@
         height: 1.4rem;
       }
     }
-    .filter {
+    .bred {
       display: flex;
       align-items: center;
-      gap: 0.8rem;
-      cursor: pointer;
-      span {
-        text-transform: uppercase;
-        font-size: 1.8rem;
+      gap: 2rem;
+      p {
+        @media (max-width: 1024px) {
+          display: none;
+        }
+        font-size: 1.2rem;
         line-height: 21.6px;
-        font-weight: 700;
-        color: $dark-brown;
-        @media (max-width: 530px) {
-          font-size: 1.4rem;
+        color: grey;
+        text-transform: uppercase;
+        display: flex;
+        gap: 1rem;
+        .clicable {
+          &:hover {
+            color: #ff5943;
+          }
+        }
+      }
+      .filter {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        cursor: pointer;
+        span {
+          text-transform: uppercase;
+          font-size: 1.8rem;
+          line-height: 21.6px;
+          font-weight: 700;
+          color: $dark-brown;
+          @media (max-width: 530px) {
+            font-size: 1.4rem;
+          }
         }
       }
     }
+
     .sort {
       display: flex;
       align-items: center;

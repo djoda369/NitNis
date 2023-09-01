@@ -206,3 +206,40 @@
   //   }
   // }
 }
+
+.image__vertical {
+  // height: 576px;
+  max-width: 100%;
+  position: relative;
+  border-radius: 40px;
+  overflow: hidden;
+  @media (max-width: 850px) {
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    content: "";
+    height: 50%;
+    width: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 252, 246, 0) 0%,
+      #fffcf6 100%
+    );
+    border-radius: 00px 0px 40px 40px;
+    opacity: 0;
+    @media (max-width: 850px) {
+      border-radius: 00px 0px 20px 20px;
+    }
+  }
+  &:hover {
+    &::after {
+      opacity: 1;
+      transition: 0.3s;
+    }
+  }
+}

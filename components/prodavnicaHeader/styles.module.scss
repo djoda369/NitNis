@@ -27,6 +27,31 @@
   z-index: 0;
   max-width: 1920px;
   background-position-y: 60%;
+  background-position-x: center;
+}
+.odecaZ {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.64), rgba(0, 0, 0, 0.64)),
+    url("../../public/background/Zenska_odeca.jpg");
+  z-index: 0;
+  max-width: 1920px;
+  background-position-y: 30%;
+  background-position-x: 20%;
+}
+.odecaM {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.64), rgba(0, 0, 0, 0.64)),
+    url("../../public/background/Muska_odeca1.jpg");
+  z-index: 0;
+  max-width: 1920px;
+  background-position-y: 20%;
+  background-position-x: 40%;
+}
+.akses {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.64), rgba(0, 0, 0, 0.64)),
+    url("../../public/background/accesories.jpg");
+  z-index: 0;
+  max-width: 1920px;
+  background-position-y: 20%;
+  background-position-x: 50%;
 }
 
 .head {

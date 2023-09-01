@@ -12,17 +12,40 @@ import Footer from "@/components/footer";
 import { VscListFilter } from "react-icons/vsc";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import paths from "@/helpers/paths";
+import CartContext from "@/components/context/cartContext";
+import { useContext } from "react";
+import Link from "next/link";
+import Head from "next/head";
 
 export default function Shop({ shoes, slug }) {
+  const context = useContext(CartContext);
   const [filter, showFilter] = useState(false);
   const [sort, setSort] = useState(false);
   const cath = shoes.map((shoe) => shoe.category);
   const filterRef = useRef(null);
   const [displeyShoes, setDisplayShoes] = useState(shoes);
   const [sortValue, setSortValue] = useState("Sortiraj");
-
   const router = useRouter();
   const query = router.query;
+  const breadCrumps =
+    router.query.shop === "zenska-odeca"
+      ? "Ženska odeća"
+      : router.query.shop === "muska-odeca"
+      ? "Muška odeća"
+      : router.query.shop === "muska-obuca"
+      ? "Muška obuća"
+      : router.query.shop === "zenska-obuca"
+      ? "Ženska obuća"
+      : router.query.shop === "aksesoari"
+      ? "Aksesoari"
+      : "";
+
+  useEffect(() => {
+    if (JSON.parse(localStorage.getItem("cartNitNis"))) {
+      const cartItems = JSON.parse(localStorage.getItem("cartNitNis"));
+      context.setCartItems(cartItems.length);
+    }
+  }, []);
 
   const categoriesValue = query.categories || "";
   const selectedCategories = categoriesValue ? categoriesValue.split(",") : [];
@@ -57,9 +80,16 @@ export default function Shop({ shoes, slug }) {
       : shoes;
 
   return (
-    <>
+    <div>
+      <Head>
+        <title>NitNis - Ručno rađena obuća i odeća</title>
+      </Head>
       <div className={classes.obuca}>
-        <ProdavnicaHeader active="prodavnica" background={slug} />
+        <ProdavnicaHeader
+          active="prodavnica"
+          background={slug}
+          context={context}
+        />
         <CSSTransition
           in={filter}
           nodeRef={filterRef}
@@ -87,10 +117,23 @@ export default function Shop({ shoes, slug }) {
         </CSSTransition>
         <div className={classes.obuca__container}>
           <div className={classes.obuca__filter}>
-            <div className={classes.filter} onClick={togglefilter}>
-              <VscListFilter />
-              <span>filter</span>
+            <div className={classes.bred}>
+              <div className={classes.filter} onClick={togglefilter}>
+                <VscListFilter />
+                <span>filter</span>
+              </div>
+              <p className={classes.bred__list}>
+                <Link href="/">
+                  <span className={classes.clicable}>Početna</span>
+                </Link>{" "}
+                /
+                <Link href="/prodavnica">
+                  <span className={classes.clicable}>Prodavnica</span>{" "}
+                </Link>
+                / <span>{breadCrumps}</span>
+              </p>
             </div>
+
             <div className={classes.sort}>
               {/* <span className={classes.sort_1}>sortiraj po:</span> */}
               <div className={classes.sort_2} onClick={toggleSort}>
@@ -109,7 +152,7 @@ export default function Shop({ shoes, slug }) {
         </div>
         <Footer />
       </div>
-    </>
+    </div>
   );
 }
 

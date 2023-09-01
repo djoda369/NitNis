@@ -2,10 +2,10 @@ import classes from "./styles.module.scss";
 import NavBar from "./Navbar";
 import Link from "next/link";
 
-export default function Header({ active }) {
+export default function Header({ active, context }) {
   return (
     <div className={classes.head}>
-      <NavBar active={active} />
+      <NavBar active={active} context={context} />
       <div className={classes.head__main}>
         <div className={classes.head__main_logo}>
           <img src="../../logo/NitLogo1.png" alt="logo" />

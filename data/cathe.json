@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Jakne",
+    "slug": "jakne",
+    "vrsta": "odeca"
+  },
+  {
+    "name": "Ponco",
+    "slug": "ponco",
+    "vrsta": "odeca"
+  },
+  {
+    "name": "Džemperi",
+    "slug": "dzemperi",
+    "vrsta": "odeca"
+  },
+  {
+    "name": "Prsluci",
+    "slug": "prsluci",
+    "vrsta": "odeca"
+  }
+]

@@ -20,10 +20,7 @@ export default function Footer() {
             <span>Posetite Nas</span>
             <div className={classes.footer__socials_container}>
               <div className={classes.box}>
-                <a
-                  href="https://www.instagram.com/nit_nis/?hl=en"
-                  target="blank"
-                >
+                <a href="https://www.instagram.com/nit_nis018/" target="blank">
                   <RiInstagramLine />
                 </a>
               </div>
@@ -54,10 +51,10 @@ export default function Footer() {
           <div className={classes.footer__policy}>
             <span>© 2023 Nit Nis</span>
             <span>
-              <Link href="/uslovi_kupovine">Uslovi Kupovine</Link>
+              <Link href="/uslovi-kupovine">Uslovi Kupovine</Link>
             </span>
             <span>
-              <Link href="/politika_privatnosti">Politika Privatnosti</Link>
+              <Link href="/politika-privatnosti">Politika Privatnosti</Link>
             </span>
           </div>
         </div>

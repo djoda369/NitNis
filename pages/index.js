@@ -8,15 +8,24 @@ import Connect from "@/components/connect";
 import Footer from "@/components/footer";
 import db from "@/helpers/db";
 import Product from "@/models/Products";
+import CartContext from "@/components/context/cartContext";
+import { useContext, useEffect } from "react";
 
 export default function App({ heighlits }) {
+  const context = useContext(CartContext);
+  useEffect(() => {
+    if (JSON.parse(localStorage.getItem("cartNitNis"))) {
+      const cartItems = JSON.parse(localStorage.getItem("cartNitNis"));
+      context.setCartItems(cartItems.length);
+    }
+  }, []);
   return (
     <div>
       <Head>
-        <title>NitNis</title>
+        <title>NitNis - Ručno rađena obuća i odeća</title>
       </Head>
       <main className={classes.main}>
-        <Header active="home" />
+        <Header active="home" context={context} />
         <ONama />
         <Highlighted heighlits={heighlits} />
         <Design />
