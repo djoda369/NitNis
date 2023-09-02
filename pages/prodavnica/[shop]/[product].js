@@ -15,6 +15,7 @@ import Link from "next/link";
 import CartContext from "@/components/context/cartContext";
 import { useContext, useEffect } from "react";
 import Head from "next/head";
+import paths from "@/helpers/paths";
 
 export default function ProductInfo({ shoe }) {
   const context = useContext(CartContext);
@@ -651,39 +652,41 @@ export default function ProductInfo({ shoe }) {
   );
 }
 
-export async function getServerSideProps(context) {
-  const { query } = context;
-  const slug = query.product;
-  db.connectDb();
-  let shoe = await Product.findOne({ slug }).populate({
-    path: "category",
-    model: Cath,
-  });
-
-  return {
-    props: { shoe: JSON.parse(JSON.stringify(shoe)) },
-  };
-}
-
-// export async function getStaticProps(context) {
-//   const { params } = context;
-//   const slug = params.product;
+// export async function getServerSideProps(context) {
+//   const { query } = context;
+//   const slug = query.product;
 //   db.connectDb();
 //   let shoe = await Product.findOne({ slug }).populate({
 //     path: "category",
 //     model: Cath,
 //   });
+//   const path1 = paths.getProductPaths();
+
 //   return {
 //     props: { shoe: JSON.parse(JSON.stringify(shoe)) },
 //   };
 // }
 
-// export async function getStaticPaths() {
-//   db.connectDb();
-//   const path = await paths.getProductPaths();
+export async function getStaticProps(context) {
+  const { params } = context;
+  const slug = params.product;
+  db.connectDb();
+  let shoe = await Product.findOne({ slug }).populate({
+    path: "category",
+    model: Cath,
+  });
+  return {
+    props: { shoe: JSON.parse(JSON.stringify(shoe)) },
+    revalidate: 600,
+  };
+}
 
-//   return {
-//     paths: path,
-//     fallback: false,
-//   };
-// }
+export async function getStaticPaths() {
+  db.connectDb();
+  const path = await paths.getProductPaths();
+
+  return {
+    paths: path,
+    fallback: false,
+  };
+}

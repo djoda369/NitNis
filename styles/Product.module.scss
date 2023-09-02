@@ -463,6 +463,7 @@
         border-radius: 10px;
         // height: 0px;
         // opacity: 0;
+        overflow: hidden;
         form {
           display: flex;
           flex-direction: column;
@@ -472,6 +473,7 @@
           border-top-right-radius: 0;
           border-top: none;
           box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.185);
+
           label {
             padding: 10px 14px;
             display: flex;
@@ -568,24 +570,24 @@
   // transform: translateY(100%);
   height: 0px;
 
-  opacity: 0;
+  // opacity: 0;
 }
 .dropdownFormEnterActive {
   // transform: translateY(0%);
   height: 193.418px;
-  opacity: 1;
+  // opacity: 1;
   transition: all 0.5s ease-in-out, opacity 0.8s ease-in;
   // transition: opacity 1s ease-in-out;
 }
 .dropdownFormExit {
   // transform: translateY(0%);
-  opacity: 1;
+  // opacity: 1;
   height: 193.418px;
 }
 .dropdownFormExitActive {
   // transform: translateY(-100%);
 
-  opacity: 0;
+  // opacity: 0;
   height: 0px;
   transition: height 0.5s ease-in-out;
   // transition: opacity 0.2s ease-in-out;

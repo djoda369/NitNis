@@ -86,18 +86,7 @@ export default function NavBar({ active, transparent, context }) {
               </span>
             </Link>
             <HiOutlineChevronDoubleDown onMouseEnter={trigerShopBig} />
-            <CSSTransition
-              in={prodavnicaDropDownBig}
-              // timeout={300}
-              unmountOnExit
-              nodeRef={bigRef}
-              classNames={{
-                enter: classes.prodavnicaBig,
-                enterActive: classes.prodavnicaBigActive,
-                exit: classes.prodavnicaBigExit,
-                exitActive: classes.prodavnicaBigExitActive,
-              }}
-            >
+            {prodavnicaDropDownBig && (
               <div
                 ref={bigRef}
                 className={classes.prodavnicaOptions}
@@ -105,23 +94,23 @@ export default function NavBar({ active, transparent, context }) {
               >
                 <ul>
                   <Link href="/prodavnica/zenska-obuca">
-                    <li onClick={trigerSidebar}>Ženska obuća</li>
+                    <li>Ženska obuća</li>
                   </Link>
                   <Link href="/prodavnica/muska-obuca">
-                    <li onClick={trigerSidebar}>Muška obuća</li>
+                    <li>Muška obuća</li>
                   </Link>
                   <Link href="/prodavnica/zenska-odeca">
-                    <li onClick={trigerSidebar}>Ženska Odeća</li>
+                    <li>Ženska Odeća</li>
                   </Link>
                   <Link href="/prodavnica/muska-odeca">
-                    <li onClick={trigerSidebar}>Muška odeća</li>
+                    <li>Muška odeća</li>
                   </Link>
                   <Link href="/prodavnica/aksesoari">
-                    <li onClick={trigerSidebar}>Akseosoari</li>
+                    <li>Akseosoari</li>
                   </Link>
                 </ul>
               </div>
-            </CSSTransition>
+            )}
           </div>
           {/* <span className={classes.hover}>Dizajnirajte Cipelu</span> */}
         </div>

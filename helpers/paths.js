@@ -7,20 +7,27 @@ async function getPaths() {
   const path = paths.map((tip) => ({
     params: { shop: tip },
   }));
+
   return path;
 }
 
 async function getProductPaths() {
   await db.connectDb();
-  const pathsSlug = await Product.distinct("slug");
-  const paths = await Product.distinct("tip");
-  const path = pathsSlug.map((tip) => ({
-    params: { product: tip },
-  }));
-  const paths2 = paths.map((tip) => ({
-    params: { shop: tip },
-  }));
-  return path + paths2;
+
+  const shops = await Product.distinct("tip");
+  const allPaths = [];
+
+  for (const shop of shops) {
+    const productsForShop = await Product.find({ tip: shop });
+
+    productsForShop.forEach((product) => {
+      allPaths.push({
+        params: { shop: shop, product: product.slug },
+      });
+    });
+  }
+
+  return allPaths;
 }
 
 const paths = { getPaths, getProductPaths };
