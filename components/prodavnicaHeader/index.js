@@ -4,7 +4,6 @@ import classes from "./styles.module.scss";
 
 export default function ProdavnicaHeader({ active, background, context }) {
   const [page, setPage] = useState("");
-  console.log(background);
 
   useEffect(() => {
     setPage(background);

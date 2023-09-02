@@ -16,6 +16,8 @@ import CartContext from "@/components/context/cartContext";
 import { useContext, useEffect } from "react";
 import Head from "next/head";
 import paths from "@/helpers/paths";
+import { useRouter } from "next/router";
+import { SpinnerCircular } from "spinners-react";
 
 export default function ProductInfo({ shoe }) {
   const context = useContext(CartContext);
@@ -43,6 +45,7 @@ export default function ProductInfo({ shoe }) {
     kontaktTelefon: "",
     email: "",
   });
+
   const vrsta =
     tip === "zenska odeca"
       ? "Ženska odeća"
@@ -88,7 +91,7 @@ export default function ProductInfo({ shoe }) {
     });
 
     const data = await resposne.json();
-    console.log(data);
+
     if (!resposne.ok) {
       setErrorMessage(data.message);
     }
@@ -142,7 +145,6 @@ export default function ProductInfo({ shoe }) {
     } else {
       setErrorMessage(null);
       formSubmit(cartData);
-      console.log(cartData);
     }
   };
 

@@ -10,7 +10,6 @@ export default function ItemsGrid({ filteredShoes }) {
     router.query.shop === "muska-odeca" ||
     router.query.shop === "aksesoari";
 
-  console.log(router);
   if (!vertikal) {
     return (
       <div className={classes.grid}>
