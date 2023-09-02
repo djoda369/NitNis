@@ -16,8 +16,6 @@ import CartContext from "@/components/context/cartContext";
 import { useContext, useEffect } from "react";
 import Head from "next/head";
 import paths from "@/helpers/paths";
-import { useRouter } from "next/router";
-import { SpinnerCircular } from "spinners-react";
 
 export default function ProductInfo({ shoe }) {
   const context = useContext(CartContext);
@@ -217,7 +215,7 @@ export default function ProductInfo({ shoe }) {
             <div className={classes.info__container}>
               <h1>Pregled Korpe</h1>
               <p>
-                "<span>{shoe.name}</span>" Proizvod dodat u korpu!
+                <span>{shoe.name}</span> Proizvod dodat u korpu!
               </p>
             </div>
           </div>

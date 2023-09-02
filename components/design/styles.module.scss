@@ -44,9 +44,12 @@
     @media (max-width: 1070px) {
       font-size: 2.8rem;
     }
-    @media (max-width: 380px) {
+    @media (max-width: 394px) {
       font-size: 2.4rem;
       padding-top: 60px;
+    }
+    @media (max-width: 341px) {
+      font-size: 2rem;
     }
   }
   &__text {
@@ -78,6 +81,9 @@
       }
       @media (max-width: 600px) {
         font-size: 2.2rem;
+      }
+      @media (max-width: 341px) {
+        font-size: 1.8rem;
       }
     }
     p {

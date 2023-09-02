@@ -96,8 +96,9 @@
 }
 
 .header {
+  z-index: 998;
   width: 100%;
-  position: absolute;
+  position: fixed;
   background: $black-color-opc;
   color: #fff;
   &_flex {
