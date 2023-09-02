@@ -687,6 +687,6 @@ export async function getStaticPaths() {
 
   return {
     paths: path,
-    fallback: true,
+    fallback: "blocking",
   };
 }
