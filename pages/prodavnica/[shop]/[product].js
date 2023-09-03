@@ -16,6 +16,8 @@ import CartContext from "@/components/context/cartContext";
 import { useContext, useEffect } from "react";
 import Head from "next/head";
 import paths from "@/helpers/paths";
+import axios from "axios";
+import { BsEnvelopeCheck } from "react-icons/bs";
 
 export default function ProductInfo({ shoe }) {
   const context = useContext(CartContext);
@@ -26,8 +28,10 @@ export default function ProductInfo({ shoe }) {
   const [showForm, setShowForm] = useState(false);
   const [bigImage, setBigImage] = useState(false);
   const [showPopUp, setShowPopUp] = useState(false);
+  const [showUpit, setShopUpit] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
   const [selectedImage, setSelectedImage] = useState(images[0]);
+
   const [formState, setFormState] = useState({
     obimRisa: "",
     obimPrstiju: "",
@@ -172,10 +176,6 @@ export default function ProductInfo({ shoe }) {
     });
   };
 
-  const submitContactForm = async function (event) {
-    event.preventDefault();
-  };
-
   const handleImageChange = (newImage) => {
     setCurrentImage(newImage);
     setSelectedImage(newImage);
@@ -189,11 +189,55 @@ export default function ProductInfo({ shoe }) {
     setBigImage((prevstate) => !prevstate);
   };
 
+  const submitContactForm = async function (event) {
+    event.preventDefault();
+
+    const data = contactState;
+
+    try {
+      const result = await axios.post("/api/orders/availability", data, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (result.status === 200) {
+        setErrorMessage(null);
+        setShopUpit(true);
+        setTimeout(() => {
+          setShopUpit(false);
+          setContactState({
+            ime: "",
+            prezime: "",
+            kontaktTelefon: "",
+            email: "",
+          });
+        }, 3000);
+      }
+    } catch (error) {
+      setErrorMessage(error.response.data.message);
+    }
+  };
+
   return (
     <div className={classes.product}>
       <Head>
         <title>NitNis - Ručno rađena obuća i odeća</title>
       </Head>
+      {showUpit && (
+        <div className={classes.upit}>
+          <div className={classes.upit__message}>
+            <div className={classes.upit__message_svg}>
+              <BsEnvelopeCheck />
+            </div>
+            <div className={classes.upit__message_text}>
+              <p>Upit uspešno poslat!</p>
+              <p>Neko iz Nit tima će vas kontaktirati u najbržem roku!</p>
+            </div>
+          </div>
+        </div>
+      )}
+
       <CSSTransition
         in={showPopUp}
         timeout={3000}
@@ -632,9 +676,10 @@ export default function ProductInfo({ shoe }) {
                     name="email"
                   />
                 </label>
+                <p className={classes.error}>{errorMessage}</p>
                 <button
                   className={classes.info__limited_form_btn}
-                  onSubmit={submitContactForm}
+                  onClick={submitContactForm}
                 >
                   Potvrdi
                 </button>

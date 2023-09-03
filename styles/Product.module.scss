@@ -7,6 +7,49 @@
       height: 64px;
     }
   }
+  .upit {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__message {
+      width: 400px;
+      height: 350px;
+      background-color: $medium-brown;
+      &_svg {
+        height: 45%;
+        background-color: $light-brown;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        svg {
+          width: 100px;
+          height: 100px;
+          fill: $dark-brown;
+        }
+      }
+      &_text {
+        height: 55%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 2rem;
+        p {
+          font-size: 2.2rem;
+          text-align: center;
+          color: #fff;
+          font-weight: 700;
+        }
+      }
+    }
+  }
   .popUp {
     z-index: 999;
     position: fixed;
@@ -617,7 +660,10 @@
 }
 .dropdownFormEnterActivePopUp {
   opacity: 1;
-  transform: translateX(-10%);
+  transform: translateX(-25%);
+  @media (max-width: 768px) {
+    transform: translateX(-10%);
+  }
   transition: all 1s ease-in-out;
 }
 .dropdownFormExitPopUp {

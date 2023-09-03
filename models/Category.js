@@ -1,7 +1,5 @@
 import mongoose from "mongoose";
 
-const { ObjectId } = mongoose.Schema;
-
 const CathSchema = new mongoose.Schema(
   {
     name: {
