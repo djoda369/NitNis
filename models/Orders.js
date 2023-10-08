@@ -14,6 +14,13 @@ const OrderSchema = new mongoose.Schema(
     StreetNumber: { type: Number, required: true },
     Floor: { type: Number },
     ApartmentNumber: { type: Number },
+    date: { type: Date },
+    id: { type: Number },
+    product: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: "shoe",
+    },
   },
   {
     timestamps: true,
