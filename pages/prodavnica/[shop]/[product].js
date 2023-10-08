@@ -697,21 +697,6 @@ export default function ProductInfo({ shoe }) {
   );
 }
 
-// export async function getServerSideProps(context) {
-//   const { query } = context;
-//   const slug = query.product;
-//   db.connectDb();
-//   let shoe = await Product.findOne({ slug }).populate({
-//     path: "category",
-//     model: Cath,
-//   });
-//   const path1 = paths.getProductPaths();
-
-//   return {
-//     props: { shoe: JSON.parse(JSON.stringify(shoe)) },
-//   };
-// }
-
 export async function getStaticProps(context) {
   const { params } = context;
   const slug = params.product;
