@@ -8,3 +8,6 @@ It consits of static routes and dynamic routes.
 The dynamic routers are generated using getStaticProps and getStaticPaths for witch data is fetched directly from the mongoDB database.
 Styling is done usnig SASS.
 The cart uses local storage.
+
+Link to the project:
+https://main--nitnis.netlify.app/
